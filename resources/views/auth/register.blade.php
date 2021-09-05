@@ -29,6 +29,6 @@
                     {!! Form::password('password_confirmation',['class'=>'form-control']) !!}
                 </div>
                 {!! Form::submit('Sign up',['class'=>'btn btn-primary btn-block']) !!}
-            {!! From::close() !!}
+            {!! Form::close() !!}
         </div>
     </div>
