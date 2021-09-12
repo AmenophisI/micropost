@@ -19,7 +19,7 @@
                             {{-- ユーザ詳細ページへのリンク --}}
                             <li class="dropdown-item">{!! link_to_route('users.show', 'プロフィール', ['user' => Auth::id()]) !!}</li>
                             {{-- お気に入り一覧ページへのリンク --}}
-                            <li class="dropdown-item">{!! link_to_route('users.favorites','お気に入り一覧',['id'=>$user->id]) !!}</li>
+                            <li class="dropdown-item">{!! link_to_route('users.favorites','お気に入り一覧',[Auth::id()]) !!}</li>
                             <li class="dropdown-divider"></li>
                             {{-- ログアウトへのリンク --}}
                             <li class="dropdown-item">{!! link_to_route('logout.get', 'Logout') !!}</li>
@@ -29,7 +29,7 @@
                     {{-- ユーザ登録ページへのリンク --}}
                     <li class="nav-item">{!! link_to_route('signup.get', 'Signup', [], ['class' => 'nav-link']) !!}</li>
                     {{-- ログインページへのリンク --}}
-                    <li class="nav-item">{!! link_to_route('login', 'Login', [], ['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item {{ Request::routeIs('users.favorites') ? 'active' : '' }}">{!! link_to_route('login', 'Login', [], ['class' => 'nav-link']) !!}</li>
                 @endif
             </ul>
         </div>
